@@ -1,4 +1,18 @@
-"use strict";
+var MyMath;
+(function (MyMath) {
+    MyMath.PI = 3.14;
+    function calaCircle(value) {
+        return value * MyMath.PI;
+    }
+    MyMath.calaCircle = calaCircle;
+})(MyMath || (MyMath = {}));
+var MyMath;
+(function (MyMath) {
+    function sumValue(num1, num2) {
+        return num1 + num2;
+    }
+    MyMath.sumValue = sumValue;
+})(MyMath || (MyMath = {}));
 // namespace: 命名空间
 // 隔离环境变量的污染 解决变量冲突
 // namespace MyMath {
