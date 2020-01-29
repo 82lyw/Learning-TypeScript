@@ -48,7 +48,41 @@ var Student = /** @class */ (function (_super) {
     };
     return Student;
 }(Person));
-var lyw = new Student('dudu', '嘟嘟', 610911);
-console.log(lyw);
-lyw.studentPrint();
-lyw.printAge(21);
+// const lyw = new Student('dudu', '嘟嘟', 610911)
+// console.log(lyw)
+// lyw.studentPrint()
+// lyw.printAge(21)
+// class set get修饰词 用于隔离私有属性 和 可公开属性
+// class 静态属性和方法
+var People = /** @class */ (function () {
+    function People() {
+        this._name = 'lyw_even';
+    }
+    People.calcCircle = function (value) {
+        return this.PI * value;
+    };
+    Object.defineProperty(People.prototype, "setName", {
+        // 私有属性赋值
+        set: function (value) {
+            this._name = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(People.prototype, "getName", {
+        //私有属性取值
+        get: function () {
+            return this._name;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    People.PI = 3.14;
+    return People;
+}());
+// let people = new People()
+// console.log(people.getName)
+// people.setName = 'lyw'
+// console.log(people.getName)
+console.log(People.PI);
+console.log(People.calcCircle(8));
