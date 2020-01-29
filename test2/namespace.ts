@@ -19,8 +19,12 @@
 // console.log(PI) // PI = 2.88
 // console.log(MyMath.PI) // PI = 3.14
 
+//多重命名空间
+/// <reference path="circle.ts"/>
+/// <reference path="sumValue.ts"/>
 console.log(MyMath.sumValue(15, 10))
-console.log(MyMath.calaCircle(8))
+console.log(MyMath.Circle.calaCircle(8))
+// tsc namespace.ts --outFile app.js
 
 // sumValue circle namespace 多个js文件合并
 // tsc --outfile app.js circle.ts sumValue.ts namespace.ts
